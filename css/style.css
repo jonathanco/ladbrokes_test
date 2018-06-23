@@ -1,0 +1,203 @@
+html, body {
+    padding: 0;
+    margin: 0;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    font-weight: 300;
+    color: #FFFFFF;
+}
+
+ul, li, ol {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+}
+
+ul {
+    overflow: hidden;
+    background-color: #333;
+    top: 0;
+    width: 100%;
+    list-style: none;
+    padding-left: 0;
+}
+
+h1 {
+    background: #333;
+    color: #fff;
+    font-family: sans-serif;
+    font-size: 1em;
+    font-weight: normal;
+    line-height: 45px;
+    position: absolute;
+    text-align: center;
+    top: 0;
+    margin: 0;
+    width: 100%;
+    z-index: 1;
+}
+
+main {
+    width: 70%;
+}
+
+li {
+    float: left;
+    width: 25%;
+    border: 1px solid;
+}
+
+li a {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 0px;
+    text-decoration: none;
+    word-wrap: break-word;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+li a:hover:not(.active) {
+    background-color: #111;
+}
+
+.active {
+    background-color: #4CAF50;
+}
+
+.page-header{
+    align-items: center;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+
+#page {
+    overflow: hidden;
+    padding-top: 20px;
+    position: relative;
+    display: none;
+}
+
+label[for="menu-toggle"] {
+    border-top: 12px double #fff;
+    border-bottom: 4px solid #fff;
+    cursor: pointer;
+    height: 4px;
+    left: 8px;
+    overflow: hidden;
+    text-indent: 100%;
+    width: 36px;
+    position: absolute;
+    top: 12px;
+    z-index: 1;
+}
+
+#menu-toggle {
+    left: -100%;
+    position: absolute;
+    top: -100%;
+    -webkit-appearance: none;
+}
+
+nav.hidden, main {
+    box-sizing: border-box;
+    display: block;
+    float: left;
+    overflow: hidden;
+    padding: 1.6em 0;
+    position: relative;
+    -webkit-transition: all .25s ease-in;
+}
+
+nav.hidden {
+    clear: left;
+    min-height: 100%;
+    width: 100%;
+}
+nav.hidden a {
+    color: #fff;
+}
+
+.call-outs-container {
+    text-align: center;
+}
+
+#circle {
+    width: 200px;
+    height: 200px;
+    -moz-border-radius: 100px;
+    -webkit-border-radius: 100px;
+    border-radius: 100px;
+    margin: 0 auto;
+    border: 1px solid #000;
+    margin-top: 3rem;
+    background-image: url('../img/bugs-bunny.png');
+    background-repeat: no-repeat;
+    background-size: 200px 200px;
+}
+
+.bugs:hover {
+    opacity: .5;
+    -webkit-transition: .3s ease-in-out;
+    transition: .3s ease-in-out;
+    cursor: pointer;
+}
+
+#menu-toggle:not(:checked) ~ nav.hidden {
+    margin-left: -100%;
+}
+#menu-toggle:checked ~ nav.hidden {
+    margin-left: 0;
+}
+#menu-toggle:not(:checked) ~ nav.hidden ~ main {
+    width: 100%;
+}
+#menu-toggle:checked ~ nav.hidden ~ main {
+    width: 70%;
+}
+
+@media (min-width: 750px) {
+    .call-outs-container {
+        display: flex;
+        justify-content: space-between;
+    }
+}
+
+@media (max-width: 750px) {
+    #circle{
+        margin-left: 10%;
+        float: left;
+    }
+}
+
+@media (max-width: 520px) {
+    #circle {
+        margin-left: auto;
+        float: none;
+    }
+}
+
+@media (max-width: 375px) {
+    li{
+        width:100%;
+    }
+    .page-header{
+        height: 10rem;
+        display: none;
+    }
+    nav.container{
+        display: none;
+    }
+    #page{
+        display:block;
+        overflow: visible;
+    }
+    .page-small{
+        display: block;
+    }
+}
